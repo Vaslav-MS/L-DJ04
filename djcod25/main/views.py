@@ -5,7 +5,7 @@ def index(request):
     return render(request, 'main/index.html')
 
 def new(request):
-    return HttpResponse('<h1>Это вторая страница</h1>')
+    return render(request, 'main/new.html')
 
 def data(request):
     return HttpResponse('<h1>Это страница DATA</h1>')

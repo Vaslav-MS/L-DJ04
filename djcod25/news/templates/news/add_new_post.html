@@ -1,0 +1,42 @@
+{% extends 'main/layoute.html' %}
+
+{% block title %}
+    Добавление новости
+{% endblock %}
+
+{% block content %}
+<h1>Тут можно добавить новость</h1>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Добавить новость
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="title">Заголовок новости</label>
+                        <input type="text" class="form-control" id="title" placeholder="Заголовок новости">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Краткое описание новости</label>
+                        <input type="text" class="form-control" id="description" placeholder="Краткое описание новости">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Содержание новости</label>
+                        <textarea class="form-control" id="content" rows="3" placeholder="Содержание новости"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Дата</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Время</label>
+                        <input type="time" class="form-control" id="time">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Добавить новость</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

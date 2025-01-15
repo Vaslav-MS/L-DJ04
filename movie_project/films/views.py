@@ -3,8 +3,8 @@ from .models import News_post
 from .forms import News_postForm
 
 def home(request):
-    news = News_post.objects.all()
-    return render(request, 'news/news.html', {'news': news})
+    news = films.objects.all()
+    return render(request, 'films/films.html', {'films': news})
 
 def create(request):
     error = ''
@@ -16,4 +16,4 @@ def create(request):
         else:
             error = 'Данные не корректные'
     form = News_postForm()
-    return render(request, 'news/add_new_post.html', {'form': form, 'error': error})
+    return render(request, 'films/add.html', {'form': form, 'error': error})
